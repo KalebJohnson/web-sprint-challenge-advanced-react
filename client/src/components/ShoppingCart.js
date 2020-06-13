@@ -1,10 +1,11 @@
 import React from "react";
-
+import Fadein from 'react-fade-in';
 /********* DO NOT DO ANYTHING IN THIS COMPONENT *********/
 
 export default function ShoppingCart(props) {
   const total = props.cart.reduce((sum, d) => sum + d.price, 0);
   return (
+    <Fadein delay='50' transitionDuration='1500'>
     <div className="cart">
       {props.cart.map((plant) => (
         <div className="plant-card" key={plant.id}>
@@ -31,5 +32,6 @@ export default function ShoppingCart(props) {
         </button>
       </div>
     </div>
+    </Fadein>
   );
 }
